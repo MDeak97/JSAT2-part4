@@ -37,3 +37,12 @@ const movieArray = [
 // Print the entire array to the console.
 console.log("All Movies (Unsorted): ");
 console.log(movieArray);
+
+// Q4.3 - Sort the array in “ascending” order by Movie ID.
+
+// Sorting array by movieID (ascending order)
+console.log("All movies (Sorted): ");
+movieArray.sort((a, b) => a.movieId - b.movieId);
+
+// Log the sorted array in the console
+console.log(movieArray);
