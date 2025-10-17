@@ -46,3 +46,41 @@ movieArray.sort((a, b) => a.movieId - b.movieId);
 
 // Log the sorted array in the console
 console.log(movieArray);
+
+// Q4.4 - Implement at least one search algorithm (either sequential search or binary search) according to the requirements in the task description.
+
+// Creating Binary search function binarySearchMovieId
+function binarySearchMovieById(array, movieId) {
+  let low = 0;
+  let high = array.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    let midID = array[mid].movieId;
+
+    if (midID === movieId) {
+      return array[mid]; // Movie found
+    } else if (midID < movieId) {
+      low = mid + 1; // Search right half
+    } else {
+      high = mid - 1; // Search left half
+    }
+  }
+
+  return null; // Movie not found
+}
+
+// Create variables to search for specific value within movieArray array
+const searchId = 12;
+const foundMovie = binarySearchMovieById(movieArray, searchId);
+
+// Display the result within the console
+if (foundMovie !== null) {
+  console.log("Movie Found: ");
+  console.log("ID:", foundMovie.movieId);
+  console.log("Title:", foundMovie.title);
+  console.log("Year:", foundMovie.year);
+  console.log("Rating:", foundMovie.rating);
+} else {
+  console.log(`Movie with ID ${searchId} not found.`);
+}
