@@ -82,5 +82,5 @@ if (foundMovie !== null) {
   console.log("Year:", foundMovie.year);
   console.log("Rating:", foundMovie.rating);
 } else {
-  console.log(`Movie with ID ${searchId} not found.`);
+  console.log(`Movie with ID ${searchId} was not found.`);
 }
